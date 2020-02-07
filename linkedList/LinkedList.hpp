@@ -123,6 +123,7 @@ bool LinkedList<T>::removeBack()
 	lastNode = secondintoLast->getNext();
 	delete lastNode;
 	lastNode = secondintoLast;
+	m_size--;
 
 	return(isRemoved);
 }
