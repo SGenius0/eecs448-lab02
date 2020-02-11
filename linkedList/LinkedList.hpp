@@ -123,13 +123,15 @@ bool LinkedList<T>::removeBack()
 		else {
 			secondintoLast = m_front;
 			lastNode = secondintoLast->getNext();
+
 			while(lastNode->getNext() != nullptr) {
 				secondintoLast = secondintoLast->getNext();
-				lastNode = lastNode->getNext();
+				lastNode = secondintoLast->getNext();
 			}
 
 			delete lastNode;
 			lastNode = nullptr;
+			secondintoLast->setNext(nullptr);
 		}
 		m_size--;
 		isRemoved = true;
